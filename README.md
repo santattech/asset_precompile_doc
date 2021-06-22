@@ -45,13 +45,13 @@ There is a way to see the details of webpacker compile command, in order to do t
 ```
 This time it executes the operation within 1 min. The folder structure for a react component is like:
 
-
+```
 public/packs/js/component/Alert/
 ├── Alert-43fcc65488165001f5e0.js
 ├── Alert-43fcc65488165001f5e0.js.map
 ├── index-456121eb199bb27d221e.js
 └── index-456121eb199bb27d221e.js.map
-
+```
 
 *There should be a time/memory consuming step to generate source-map files. Source-map files help to map a combined/minified file back to an unbuilt state. If you don’t need source-map files on the production server, you can skip generating these files by setting devtool for the webpack/webpacker.
 *
@@ -70,9 +70,10 @@ Then test the implemented code:
  DEVTOOL=none ./bin/webpack --progress
 ```
 You should not see the source-map generating step anymore. There is a drastic change in the JS packs folder also. NOw it reduces to around 350mb.
-
+```
 public/packs/js/component/Alert/
 ├── Alert-43fcc65488165001f5e0.js
 └── index-456121eb199bb27d221e.js
+```
 
 **The size of the war file reduced to 130mb now and it s working. My gutfilling is that it can be reduced more after passing the environment mode in webpacker. I will update here once it is tested.**
